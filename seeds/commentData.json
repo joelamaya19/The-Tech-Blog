@@ -1,0 +1,18 @@
+[
+    {
+        "content": "hello world this is a comment",
+        "blog_id": 1
+    },
+    {
+        "content": "commentTest2",
+        "blog_id": 2
+    },
+    {
+        "content": "commentTest3",
+        "blog_id": 3
+    },
+    {
+        "content": "commentTest4",
+        "blog_id": 4
+    }
+]
