@@ -27,3 +27,34 @@ body {
   button.no-button:hover {
     color: #ffcc00; /* Change text color on hover */
   }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .card-date {
+    font-size: 14px;
+    color: #555;
+  }
+  
