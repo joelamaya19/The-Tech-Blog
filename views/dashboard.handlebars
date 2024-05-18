@@ -1,45 +1,67 @@
 {{log this}}
 <div class="container mt-4">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="alert alert-primary" role="alert">
-        Welcome, {{name}}!
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Your Blogs</h2>
-      {{#each blogs as |blog|}}
-      <div class="card mb-4">
-        <div class="card-body">
-          <a class="text-decoration-none" href="/blogs/{{blog.id}}">
-            <h5 class="card-title">{{blog.title}}</h5>
-          </a>
-          <p class="card-text">{{blog.contents}}</p>
-          <p class="card-text"><small class="text-muted">Created on: {{format_date blog.date_created}}</small></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-primary" role="alert">
+                Welcome, {{name}}!
+            </div>
         </div>
-      </div>
-      {{else}}
-      <p>No blogs found.</p>
-      {{/each}}
     </div>
-    <div class="col-md-6">
-      <h2>Your Comments</h2>
-      {{#each comments as |comment|}}
-      <div class="card mb-4">
-        <div class="card-body">
-          <a class="text-decoration-none" href="/blogs/{{comment.blog_id}}">
-            <p class="card-text">{{comment.content}}</p>
-          </a>
-          <p class="card-text"><small class="text-muted">Commented on: {{format_date comment.date_created}}</small></p>
+    <div>
+        <div id="blogForm" style="display: none;">
+            <form>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter title">
+                </div>
+                <div class="form-group">
+                    <label for="contents">Contents:</label>
+                    <textarea class="form-control" id="contents" placeholder="Enter contents"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-      </div>
-      {{else}}
-      <p>No comments found.</p>
-      {{/each}}
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="ml-2 col-12 col-md-auto d-flex align-items-center justify-content-between">
+                <h2>Your Blogs</h2>
+                <button class="btn btn-primary" onclick="toggleForm()">Create Blog</button>
+            </div>
+
+            {{#each blogs as |blog|}}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <a class="text-decoration-none" href="/blogs/{{blog.id}}">
+                        <h5 class="card-title">{{blog.title}}</h5>
+                    </a>
+                    <p class="card-text">{{blog.contents}}</p>
+                    <p class="card-text"><small class="text-muted">Created on: {{format_date blog.date_created}}</small>
+                    </p>
+                </div>
+            </div>
+            {{else}}
+            <p>No blogs found.</p>
+            {{/each}}
+        </div>
+        <div class="col-md-6">
+            <h2>Your Comments</h2>
+            {{#each comments as |comment|}}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <a class="text-decoration-none" href="/blogs/{{comment.blog_id}}">
+                        <p class="card-text">{{comment.content}}</p>
+                    </a>
+                    <p class="card-text"><small class="text-muted">Commented on: {{format_date
+                            comment.date_created}}</small></p>
+                </div>
+            </div>
+            {{else}}
+            <p>No comments found.</p>
+            {{/each}}
+        </div>
+    </div>
 </div>
 
 
