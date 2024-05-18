@@ -70,7 +70,7 @@ document
 
 document
     .querySelector('.comment-section')
-    .addEventListener('click', delBlogButtonHandler);
+    .addEventListener('click', delCommentButtonHandler);
 
 function toggleForm() {
     let form = document.getElementById("blogForm");
